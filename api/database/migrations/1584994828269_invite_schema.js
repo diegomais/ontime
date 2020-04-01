@@ -20,6 +20,7 @@ class InviteSchema extends Schema {
         .inTable('teams')
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
+      table.string('email').notNullable();
       table.timestamps();
     });
   }

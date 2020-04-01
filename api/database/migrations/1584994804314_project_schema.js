@@ -4,6 +4,7 @@ class ProjectSchema extends Schema {
   up() {
     this.create('projects', (table) => {
       table.increments();
+      table.string('title').notNullable();
       table
         .integer('team_id')
         .unsigned()
