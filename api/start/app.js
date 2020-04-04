@@ -18,6 +18,7 @@ const providers = [
   '@adonisjs/lucid-slugify/providers/SlugifyProvider',
   '@adonisjs/mail/providers/MailProvider',
   '@adonisjs/redis/providers/RedisProvider',
+  '@adonisjs/validator/providers/ValidatorProvider',
   'adonis-kue/providers/KueProvider',
 ];
 
