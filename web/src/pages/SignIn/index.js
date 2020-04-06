@@ -5,6 +5,8 @@ import { signInRequest } from '~/store/modules/auth/actions';
 import Button from '~/styles/components/Button';
 import { Container, SignForm } from './styles';
 
+import logo from '~/assets/logo.png';
+
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,8 +21,7 @@ export default function SignIn() {
   return (
     <Container>
       <SignForm onSubmit={handleSubmit}>
-        <h1>Welcome</h1>
-
+        <img src={logo} alt="OnTime" width={320} />
         <span>E-mail</span>
         <input
           type="email"
@@ -38,7 +39,7 @@ export default function SignIn() {
         />
 
         <Button type="submit" size="big">
-          Sign In
+          Log In
         </Button>
       </SignForm>
     </Container>

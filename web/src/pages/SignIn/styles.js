@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: #202225;
+  background: #f5f5f5;
   height: 100%;
   display: flex;
   flex: 1;
@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const SignForm = styled.form`
-  background: #36393f;
+  background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 40px;
@@ -27,7 +27,7 @@ export const SignForm = styled.form`
   }
 
   span {
-    color: #b9bbbe;
+    color: #666;
     font-size: 14px;
     line-height: 16px;
     font-weight: 600;
@@ -40,7 +40,7 @@ export const SignForm = styled.form`
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: rgba(0, 0, 0, 0.1);
-    color: #f6f6f6;
+    color: #666;
     margin-top: 8px;
     font-size: 16px;
     transition: border 0.15s ease;

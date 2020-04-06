@@ -50,7 +50,6 @@ const Button = styled.button.attrs((props) => ({
   color: #fff;
   font-size: 12px;
   padding: 0 10px;
-  text-transform: uppercase;
   font-weight: 700;
 
   ${(props) => sizes[props.size || 'default']};
