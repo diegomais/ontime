@@ -1,5 +1,7 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
+import Route from './Route';
 
 import Main from '~/pages/Main';
 import SignIn from '~/pages/SignIn';
@@ -10,7 +12,7 @@ export default function services() {
     <Switch>
       <Route path="/" exact component={SignIn} />
       <Route path="/register" component={SignUp} />
-      <Route path="/dashboard" component={Main} />
+      <Route path="/dashboard" component={Main} isPrivate />
     </Switch>
   );
 }
