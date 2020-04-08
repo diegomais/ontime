@@ -2,7 +2,12 @@ import { call, put, all, takeLatest } from 'redux-saga/effects';
 
 import api from '~/services/api';
 
-import { getTeamsSuccess, createTeamSuccess, closeTeamModal } from './actions';
+import {
+  getTeamsSuccess,
+  createTeamSuccess,
+  selectTeam,
+  closeTeamModal,
+} from './actions';
 
 export function* getTeams() {
   const response = yield call(api.get, 'teams');
@@ -17,6 +22,7 @@ export function* createTeam({ payload }) {
     const response = yield call(api.post, 'teams', { name });
 
     yield put(createTeamSuccess(response.data));
+    yield put(selectTeam(response.data));
     yield put(closeTeamModal());
   } catch (error) {
     // TODO: Create notification
