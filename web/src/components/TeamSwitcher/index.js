@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getTeamsRequest, selectTeam } from '~/store/modules/teams/actions';
+import {
+  getTeamsRequest,
+  selectTeam,
+  openTeamModal,
+  closeTeamModal,
+} from '~/store/modules/teams/actions';
 
-import { Container, TeamList, Team } from './styles';
+import Modal from '~/components/Modal';
+import Button from '~/styles/components/Button';
+import { Container, TeamList, Team, NewTeam } from './styles';
 
 export default function TeamSwitcher() {
+  const [newTeamName, setNewTeamName] = useState('');
   const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.teams);
+  const { data, teamModalOpen } = useSelector((state) => state.teams);
 
   useEffect(() => {
     function getTeams() {
@@ -21,6 +29,14 @@ export default function TeamSwitcher() {
     dispatch(selectTeam(team));
   }
 
+  function handleOpenModal() {
+    dispatch(openTeamModal());
+  }
+
+  function handleCloseModal() {
+    dispatch(closeTeamModal());
+  }
+
   return (
     <Container>
       <TeamList>
@@ -32,7 +48,29 @@ export default function TeamSwitcher() {
             />
           </Team>
         ))}
+
+        <NewTeam onClick={handleOpenModal}>New</NewTeam>
       </TeamList>
+
+      {teamModalOpen && (
+        <Modal>
+          <h1>Create Team</h1>
+          <form onSubmit={() => {}}>
+            <span>Team Name</span>
+            <input
+              name="newTeamName"
+              value={newTeamName}
+              onChange={(e) => setNewTeamName(e.target.value)}
+            />
+            <Button type="submit" size="big">
+              Save
+            </Button>
+            <Button onClick={handleCloseModal} size="small" color="gray">
+              Cancel
+            </Button>
+          </form>
+        </Modal>
+      )}
     </Container>
   );
 }

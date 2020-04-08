@@ -25,3 +25,15 @@ export function selectTeam(team) {
     payload: { team },
   };
 }
+
+export function openTeamModal() {
+  return {
+    type: '@teams/OPEN_TEAM_MODAL',
+  };
+}
+
+export function closeTeamModal() {
+  return {
+    type: '@teams/CLOSE_TEAM_MODAL',
+  };
+}
