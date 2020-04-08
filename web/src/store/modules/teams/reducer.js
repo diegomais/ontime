@@ -24,6 +24,11 @@ export default (state = initialState, { type, payload }) => {
       return produce(state, (draft) => {
         draft.teamModalOpen = false;
       });
+    case '@teams/CREATE_TEAM_SUCCESS':
+      return produce(state, (draft) => {
+        draft.data = [...state.data, payload.newTeam];
+        draft.active = payload.newTeam;
+      });
     default:
       return state;
   }

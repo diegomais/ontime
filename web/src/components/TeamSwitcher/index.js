@@ -6,6 +6,7 @@ import {
   selectTeam,
   openTeamModal,
   closeTeamModal,
+  createTeamRequest,
 } from '~/store/modules/teams/actions';
 
 import Modal from '~/components/Modal';
@@ -37,6 +38,12 @@ export default function TeamSwitcher() {
     dispatch(closeTeamModal());
   }
 
+  function handleSubmitNewTeam(e) {
+    e.preventDefault();
+
+    dispatch(createTeamRequest(newTeamName));
+  }
+
   return (
     <Container>
       <TeamList>
@@ -55,7 +62,7 @@ export default function TeamSwitcher() {
       {teamModalOpen && (
         <Modal>
           <h1>Create Team</h1>
-          <form onSubmit={() => {}}>
+          <form onSubmit={handleSubmitNewTeam}>
             <span>Team Name</span>
             <input
               name="newTeamName"
