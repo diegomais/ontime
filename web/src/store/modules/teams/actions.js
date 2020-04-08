@@ -16,3 +16,12 @@ export function getTeamsFailure() {
     type: '@teams/GET_TEAMS_FAILURE',
   };
 }
+
+export function selectTeam(team) {
+  localStorage.setItem('@OnTime:Team', JSON.stringify(team));
+
+  return {
+    type: '@teams/SELECT_TEAM',
+    payload: { team },
+  };
+}
