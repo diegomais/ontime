@@ -2,7 +2,7 @@ import produce from 'immer';
 
 const initialState = {
   data: [],
-  active: JSON.parse(localStorage.getItem('@OnTime:Team')) || null,
+  activeTeam: JSON.parse(localStorage.getItem('@OnTime:Team')) || null,
   teamModalOpen: false,
 };
 
@@ -14,7 +14,7 @@ export default (state = initialState, { type, payload }) => {
       });
     case '@teams/SELECT_TEAM':
       return produce(state, (draft) => {
-        draft.active = payload.team;
+        draft.activeTeam = payload.team;
       });
     case '@teams/OPEN_TEAM_MODAL':
       return produce(state, (draft) => {

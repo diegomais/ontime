@@ -23,11 +23,11 @@ export function* signIn({ payload }) {
   }
 }
 
-export function* signOut() {
+export function signOut() {
   localStorage.removeItem('@OnTime:Token');
   localStorage.removeItem('@OnTime:Team');
 
-  yield put(history.push('/'));
+  history.push('/');
 }
 
 export default all([
