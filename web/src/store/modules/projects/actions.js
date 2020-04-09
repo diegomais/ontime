@@ -1,18 +1,26 @@
-export function getProjectsRequest() {
+import types from './types';
+
+function getProjectsRequest() {
   return {
-    type: '@projects/GET_PROJECTS_REQUEST',
+    type: types.GET_PROJECTS_REQUEST,
   };
 }
 
-export function getProjectsSuccess(projects) {
+function getProjectsSuccess(projects) {
   return {
-    type: '@projects/GET_PROJECTS_SUCCESS',
+    type: types.GET_PROJECTS_SUCCESS,
     payload: { projects },
   };
 }
 
-export function getProjectsFailure() {
+function getProjectsFailure() {
   return {
-    type: '@projects/GET_PROJECTS_FAILURE',
+    type: types.GET_PROJECTS_FAILURE,
   };
 }
+
+export default {
+  getProjectsRequest,
+  getProjectsSuccess,
+  getProjectsFailure,
+};

@@ -1,5 +1,7 @@
 import produce from 'immer';
 
+import types from './types';
+
 const initialState = {
   data: [],
   activeTeam: JSON.parse(localStorage.getItem('@OnTime:Team')) || null,
@@ -8,23 +10,23 @@ const initialState = {
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case '@teams/GET_TEAMS_SUCCESS':
+    case types.GET_TEAMS_SUCCESS:
       return produce(state, (draft) => {
         draft.data = payload.teams;
       });
-    case '@teams/SELECT_TEAM':
+    case types.SELECT_TEAM:
       return produce(state, (draft) => {
         draft.activeTeam = payload.team;
       });
-    case '@teams/OPEN_TEAM_MODAL':
+    case types.OPEN_TEAM_MODAL:
       return produce(state, (draft) => {
         draft.teamModalOpen = true;
       });
-    case '@teams/CLOSE_TEAM_MODAL':
+    case types.CLOSE_TEAM_MODAL:
       return produce(state, (draft) => {
         draft.teamModalOpen = false;
       });
-    case '@teams/CREATE_TEAM_SUCCESS':
+    case types.CREATE_TEAM_SUCCESS:
       return produce(state, (draft) => {
         draft.data = [...state.data, payload.newTeam];
       });

@@ -2,17 +2,13 @@ import { call, put, all, takeLatest } from 'redux-saga/effects';
 
 import api from '~/services/api';
 
-import {
-  getTeamsSuccess,
-  createTeamSuccess,
-  selectTeam,
-  closeTeamModal,
-} from './actions';
+import types from './types';
+import actions from './actions';
 
 export function* getTeams() {
   const response = yield call(api.get, 'teams');
 
-  yield put(getTeamsSuccess(response.data));
+  yield put(actions.getTeamsSuccess(response.data));
 }
 
 export function* createTeam({ payload }) {
@@ -21,15 +17,15 @@ export function* createTeam({ payload }) {
   try {
     const response = yield call(api.post, 'teams', { name });
 
-    yield put(createTeamSuccess(response.data));
-    yield put(selectTeam(response.data));
-    yield put(closeTeamModal());
+    yield put(actions.createTeamSuccess(response.data));
+    yield put(actions.selectTeam(response.data));
+    yield put(actions.closeTeamModal());
   } catch (error) {
     // TODO: Create notification
   }
 }
 
 export default all([
-  takeLatest('@teams/GET_TEAMS_REQUEST', getTeams),
-  takeLatest('@teams/CREATE_TEAM_REQUEST', createTeam),
+  takeLatest(types.GET_TEAMS_REQUEST, getTeams),
+  takeLatest(types.CREATE_TEAM_REQUEST, createTeam),
 ]);

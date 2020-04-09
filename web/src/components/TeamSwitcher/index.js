@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  getTeamsRequest,
-  selectTeam,
-  openTeamModal,
-  closeTeamModal,
-  createTeamRequest,
-} from '~/store/modules/teams/actions';
-import { signOut } from '~/store/modules/auth/actions';
+import teamsActions from '~/store/modules/teams/actions';
+import authActions from '~/store/modules/auth/actions';
 
 import Modal from '~/components/Modal';
 import Button from '~/styles/components/Button';
@@ -21,32 +15,32 @@ export default function TeamSwitcher() {
 
   useEffect(() => {
     function getTeams() {
-      dispatch(getTeamsRequest());
+      dispatch(teamsActions.getTeamsRequest());
     }
 
     getTeams();
   }, [dispatch]);
 
   function handleSelectTeam(team) {
-    dispatch(selectTeam(team));
+    dispatch(teamsActions.selectTeam(team));
   }
 
   function handleOpenModal() {
-    dispatch(openTeamModal());
+    dispatch(teamsActions.openTeamModal());
   }
 
   function handleCloseModal() {
-    dispatch(closeTeamModal());
+    dispatch(teamsActions.closeTeamModal());
   }
 
   function handleLogout() {
-    dispatch(signOut());
+    dispatch(authActions.signOut());
   }
 
   function handleSubmitNewTeam(e) {
     e.preventDefault();
 
-    dispatch(createTeamRequest(newTeamName));
+    dispatch(teamsActions.createTeamRequest(newTeamName));
   }
 
   return (

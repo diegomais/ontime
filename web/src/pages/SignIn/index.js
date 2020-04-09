@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { signInRequest } from '~/store/modules/auth/actions';
+import actions from '~/store/modules/auth/actions';
 import Button from '~/styles/components/Button';
 import { Container, SignForm } from './styles';
 
@@ -15,7 +15,7 @@ export default function SignIn() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    dispatch(signInRequest(email, password));
+    dispatch(actions.signInRequest(email, password));
   }
 
   return (

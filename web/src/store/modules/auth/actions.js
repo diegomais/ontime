@@ -1,25 +1,34 @@
-export function signInRequest(email, password) {
+import types from './types';
+
+function signInRequest(email, password) {
   return {
-    type: '@auth/SIGN_IN_REQUEST',
+    type: types.SIGN_IN_REQUEST,
     payload: { email, password },
   };
 }
 
-export function signInSuccess(token) {
+function signInSuccess(token) {
   return {
-    type: '@auth/SIGN_IN_SUCCESS',
+    type: types.SIGN_IN_SUCCESS,
     payload: { token },
   };
 }
 
-export function signFailure() {
+function signFailure() {
   return {
-    type: '@auth/SIGN_FAILURE',
+    type: types.SIGN_IN_FAILURE,
   };
 }
 
-export function signOut() {
+function signOutRequest() {
   return {
-    type: '@auth/SIGN_OUT',
+    type: types.SIGN_OUT_REQUEST,
   };
 }
+
+export default {
+  signInRequest,
+  signInSuccess,
+  signFailure,
+  signOutRequest,
+};

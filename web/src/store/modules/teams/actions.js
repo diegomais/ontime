@@ -1,59 +1,73 @@
-export function getTeamsRequest() {
+import types from './types';
+
+function getTeamsRequest() {
   return {
-    type: '@teams/GET_TEAMS_REQUEST',
+    type: types.GET_TEAMS_REQUEST,
   };
 }
 
-export function getTeamsSuccess(teams) {
+function getTeamsSuccess(teams) {
   return {
-    type: '@teams/GET_TEAMS_SUCCESS',
+    type: types.GET_TEAMS_SUCCESS,
     payload: { teams },
   };
 }
 
-export function getTeamsFailure() {
+function getTeamsFailure() {
   return {
-    type: '@teams/GET_TEAMS_FAILURE',
+    type: types.GET_TEAMS_FAILURE,
   };
 }
 
-export function selectTeam(team) {
+function selectTeam(team) {
   localStorage.setItem('@OnTime:Team', JSON.stringify(team));
 
   return {
-    type: '@teams/SELECT_TEAM',
+    type: types.SELECT_TEAM,
     payload: { team },
   };
 }
 
-export function openTeamModal() {
+function openTeamModal() {
   return {
-    type: '@teams/OPEN_TEAM_MODAL',
+    type: types.OPEN_TEAM_MODAL,
   };
 }
 
-export function closeTeamModal() {
+function closeTeamModal() {
   return {
-    type: '@teams/CLOSE_TEAM_MODAL',
+    type: types.CLOSE_TEAM_MODAL,
   };
 }
 
-export function createTeamRequest(name) {
+function createTeamRequest(name) {
   return {
-    type: '@teams/CREATE_TEAM_REQUEST',
+    type: types.CREATE_TEAM_REQUEST,
     payload: { name },
   };
 }
 
-export function createTeamSuccess(newTeam) {
+function createTeamSuccess(newTeam) {
   return {
-    type: '@teams/CREATE_TEAM_SUCCESS',
+    type: types.CREATE_TEAM_SUCCESS,
     payload: { newTeam },
   };
 }
 
-export function createTeamFailure() {
+function createTeamFailure() {
   return {
-    type: '@teams/CREATE_TEAM_FAILURE',
+    type: types.CREATE_TEAM_FAILURE,
   };
 }
+
+export default {
+  getTeamsRequest,
+  getTeamsSuccess,
+  getTeamsFailure,
+  selectTeam,
+  openTeamModal,
+  closeTeamModal,
+  createTeamRequest,
+  createTeamSuccess,
+  createTeamFailure,
+};

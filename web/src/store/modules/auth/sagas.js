@@ -3,7 +3,8 @@ import { call, put, all, takeLatest } from 'redux-saga/effects';
 import api from '~/services/api';
 import history from '~/services/history';
 
-import { signInSuccess } from './actions';
+import types from './types';
+import actions from './actions';
 
 export function* signIn({ payload }) {
   try {
@@ -15,7 +16,7 @@ export function* signIn({ payload }) {
 
     localStorage.setItem('@OnTime:Token', token);
 
-    yield put(signInSuccess(token));
+    yield put(actions.signInSuccess(token));
 
     history.push('/dashboard');
   } catch (error) {
@@ -31,6 +32,6 @@ export function signOut() {
 }
 
 export default all([
-  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-  takeLatest('@auth/SIGN_OUT', signOut),
+  takeLatest(types.SIGN_IN_REQUEST, signIn),
+  takeLatest(types.SIGN_OUT_REQUEST, signOut),
 ]);
