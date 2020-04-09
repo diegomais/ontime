@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import actions from '~/store/modules/auth/actions';
-import Button from '~/styles/components/Button';
+import { Button } from '~/components/Button';
 import { Container, SignForm } from './styles';
 
 import logo from '~/assets/logo.png';

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import projectActions from '~/store/modules/projects/actions';
-import { Button } from '~/styles/components/Button';
+import { Button } from '~/components/Button';
 import { Container, Project } from './styles';
 
 export default function Projects() {

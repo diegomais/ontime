@@ -5,7 +5,7 @@ import teamsActions from '~/store/modules/teams/actions';
 import authActions from '~/store/modules/auth/actions';
 
 import Modal from '~/components/Modal';
-import Button from '~/styles/components/Button';
+import { Button } from '~/components/Button';
 import { Container, TeamList, Team, NewTeam, Logout } from './styles';
 
 export default function TeamSwitcher() {
