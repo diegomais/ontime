@@ -12,10 +12,10 @@ export default function Modal({ children, size }) {
 }
 
 Modal.propTypes = {
-  children: PropTypes.oneOfType(
+  children: PropTypes.oneOfType([
     PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element)
-  ).isRequired,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
   size: PropTypes.string,
 };
 
