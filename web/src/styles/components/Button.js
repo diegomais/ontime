@@ -40,7 +40,7 @@ const colors = {
   `,
 };
 
-const Button = styled.button.attrs((props) => ({
+export const Button = styled.button.attrs((props) => ({
   type: props.type || 'button',
 }))`
   border-radius: 3px;
