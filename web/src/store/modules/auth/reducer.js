@@ -16,10 +16,7 @@ export default (state = initialState, { type, payload }) => {
         draft.signed = true;
       });
     case types.SIGN_OUT_REQUEST:
-      return produce(state, (draft) => {
-        draft.token = null;
-        draft.signed = false;
-      });
+      return initialState;
     default:
       return state;
   }

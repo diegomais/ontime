@@ -11,6 +11,10 @@ export function* getTeams() {
   yield put(actions.getTeamsSuccess(response.data));
 }
 
+export function setTeam({ payload }) {
+  api.defaults.headers.Team = payload.team.slug;
+}
+
 export function* createTeam({ payload }) {
   const { name } = payload;
 
@@ -27,5 +31,6 @@ export function* createTeam({ payload }) {
 
 export default all([
   takeLatest(types.GET_TEAMS_REQUEST, getTeams),
+  takeLatest(types.SELECT_TEAM, setTeam),
   takeLatest(types.CREATE_TEAM_REQUEST, createTeam),
 ]);

@@ -20,8 +20,6 @@ function getTeamsFailure() {
 }
 
 function selectTeam(team) {
-  localStorage.setItem('@OnTime:Team', JSON.stringify(team));
-
   return {
     type: types.SELECT_TEAM,
     payload: { team },

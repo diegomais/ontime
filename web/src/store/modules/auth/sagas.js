@@ -14,7 +14,7 @@ export function* signIn({ payload }) {
 
     const { token } = response.data;
 
-    localStorage.setItem('@OnTime:Token', token);
+    api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(actions.signInSuccess(token));
 
@@ -25,13 +25,21 @@ export function* signIn({ payload }) {
 }
 
 export function signOut() {
-  localStorage.removeItem('@OnTime:Token');
-  localStorage.removeItem('@OnTime:Team');
-
   history.push('/');
+}
+
+export function setToken({ payload }) {
+  if (!payload) return;
+
+  const { token } = payload.auth;
+
+  if (token) {
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+  }
 }
 
 export default all([
   takeLatest(types.SIGN_IN_REQUEST, signIn),
   takeLatest(types.SIGN_OUT_REQUEST, signOut),
+  takeLatest(types.PERSIST_REHYDRATE, setToken),
 ]);

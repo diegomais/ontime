@@ -4,7 +4,7 @@ import types from './types';
 
 const initialState = {
   data: [],
-  activeTeam: JSON.parse(localStorage.getItem('@OnTime:Team')) || null,
+  activeTeam: null,
   teamModalOpen: false,
 };
 
