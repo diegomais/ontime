@@ -1,11 +1,20 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { getProjectsRequest } from '~/store/modules/projects/actions';
 import { Button } from '~/styles/components/Button';
 import { Container, Project } from './styles';
 
 export default function Projects() {
+  const dispatch = useDispatch();
   const { activeTeam } = useSelector((state) => state.teams);
+  const { data } = useSelector((state) => state.projects);
+
+  useEffect(() => {
+    if (activeTeam) {
+      dispatch(getProjectsRequest());
+    }
+  }, [activeTeam, dispatch]);
 
   if (!activeTeam) return null;
 
@@ -19,41 +28,11 @@ export default function Projects() {
         </div>
       </header>
 
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
-
-      <Project>
-        <p>Skylab App</p>
-      </Project>
+      {data.map((project) => (
+        <Project key={project.id}>
+          <p>{project.title}</p>
+        </Project>
+      ))}
     </Container>
   );
 }
