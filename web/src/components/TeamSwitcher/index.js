@@ -34,7 +34,7 @@ export default function TeamSwitcher() {
   }
 
   function handleLogout() {
-    dispatch(authActions.signOut());
+    dispatch(authActions.signOutRequest());
   }
 
   function handleSubmitNewTeam(e) {
