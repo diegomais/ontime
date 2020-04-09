@@ -13,7 +13,7 @@ export function* signIn({ payload }) {
 
     const { token } = response.data;
 
-    localStorage.setItem('@OnTime:token', token);
+    localStorage.setItem('@OnTime:Token', token);
 
     yield put(signInSuccess(token));
 
@@ -23,4 +23,14 @@ export function* signIn({ payload }) {
   }
 }
 
-export default all([takeLatest('@auth/SIGN_IN_REQUEST', signIn)]);
+export function* signOut() {
+  localStorage.removeItem('@OnTime:Token');
+  localStorage.removeItem('@OnTime:Team');
+
+  yield put(history.push('/'));
+}
+
+export default all([
+  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
+  takeLatest('@auth/SIGN_OUT', signOut),
+]);

@@ -13,6 +13,11 @@ export default (state = initialState, { type, payload }) => {
         draft.token = payload.token;
         draft.signed = true;
       });
+    case '@auth/SIGN_OUT':
+      return produce(state, (draft) => {
+        draft.token = null;
+        draft.signed = false;
+      });
     default:
       return state;
   }

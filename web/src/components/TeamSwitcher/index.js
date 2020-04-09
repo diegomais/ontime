@@ -8,10 +8,11 @@ import {
   closeTeamModal,
   createTeamRequest,
 } from '~/store/modules/teams/actions';
+import { signOut } from '~/store/modules/auth/actions';
 
 import Modal from '~/components/Modal';
 import Button from '~/styles/components/Button';
-import { Container, TeamList, Team, NewTeam } from './styles';
+import { Container, TeamList, Team, NewTeam, Logout } from './styles';
 
 export default function TeamSwitcher() {
   const [newTeamName, setNewTeamName] = useState('');
@@ -38,6 +39,10 @@ export default function TeamSwitcher() {
     dispatch(closeTeamModal());
   }
 
+  function handleLogout() {
+    dispatch(signOut());
+  }
+
   function handleSubmitNewTeam(e) {
     e.preventDefault();
 
@@ -56,8 +61,10 @@ export default function TeamSwitcher() {
           </Team>
         ))}
 
-        <NewTeam onClick={handleOpenModal}>New</NewTeam>
+        <NewTeam onClick={handleOpenModal}>New Team</NewTeam>
       </TeamList>
+
+      <Logout onClick={handleLogout}>Logout</Logout>
 
       {teamModalOpen && (
         <Modal>
