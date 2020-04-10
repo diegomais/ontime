@@ -4,6 +4,7 @@ import Select from 'react-select';
 
 import api from '~/services/api';
 import membersActions from '~/store/modules/members/actions';
+import Can from '~/components/Can';
 import Modal from '~/components/Modal';
 import { Button } from '~/components/Button';
 import { Invite, MembersList } from './styles';
@@ -52,29 +53,36 @@ export default function Members() {
     <Modal size="big">
       <h1>Members</h1>
 
-      <Invite onSubmit={handleInvite}>
-        <input
-          name="invite"
-          placeholder="Enter email to invite to team"
-          value={inviteEmail}
-          onChange={(e) => setInviteEmail(e.target.value)}
-        />
-        <Button type="submit">Send</Button>
-      </Invite>
+      <Can checkPermission="create_invites">
+        <Invite onSubmit={handleInvite}>
+          <input
+            name="invite"
+            placeholder="Enter email to invite to team"
+            value={inviteEmail}
+            onChange={(e) => setInviteEmail(e.target.value)}
+          />
+          <Button type="submit">Send</Button>
+        </Invite>
+      </Can>
 
       <form>
         <MembersList>
           {data.map((member) => (
             <li key={member.id}>
               <strong>{member.user.name}</strong>
-              <Select
-                isMulti
-                options={roles}
-                value={member.roles}
-                getOptionLabel={(role) => role.name}
-                getOptionValue={(role) => role.id}
-                onChange={(value) => handleRolesChange(member.id, value)}
-              />
+              <Can checkRole="administrator">
+                {(can) => (
+                  <Select
+                    isMulti
+                    isDisabled={!can}
+                    options={roles}
+                    value={member.roles}
+                    getOptionLabel={(role) => role.name}
+                    getOptionValue={(role) => role.id}
+                    onChange={(value) => handleRolesChange(member.id, value)}
+                  />
+                )}
+              </Can>
             </li>
           ))}
         </MembersList>

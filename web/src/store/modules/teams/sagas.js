@@ -1,6 +1,7 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
 
 import api from '~/services/api';
+import { getPermissions } from '../auth/sagas';
 
 import types from './types';
 import actions from './actions';
@@ -32,5 +33,6 @@ export function* createTeam({ payload }) {
 export default all([
   takeLatest(types.GET_TEAMS_REQUEST, getTeams),
   takeLatest(types.SELECT_TEAM, setTeam),
+  takeLatest(types.SELECT_TEAM, getPermissions),
   takeLatest(types.CREATE_TEAM_REQUEST, createTeam),
 ]);

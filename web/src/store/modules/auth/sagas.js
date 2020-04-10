@@ -1,4 +1,4 @@
-import { call, put, all, takeLatest } from 'redux-saga/effects';
+import { call, put, all, select, fork, takeLatest } from 'redux-saga/effects';
 
 import api from '~/services/api';
 import history from '~/services/history';
@@ -56,7 +56,24 @@ export function setToken({ payload }) {
   }
 }
 
+export function* getPermissions() {
+  const signed = yield select((state) => state.auth.signed);
+  const team = yield select((state) => state.teams.activeTeam);
+
+  if (!signed || !team) {
+    return;
+  }
+
+  const response = yield call(api.get, 'permissions');
+
+  const { roles, permissions } = response.data;
+
+  yield put(actions.getPermissionsSuccess(roles, permissions));
+}
+
 export default all([
+  fork(getPermissions),
+
   takeLatest(types.SIGN_UP_REQUEST, signUp),
   takeLatest(types.SIGN_IN_REQUEST, signIn),
   takeLatest(types.SIGN_OUT_REQUEST, signOut),

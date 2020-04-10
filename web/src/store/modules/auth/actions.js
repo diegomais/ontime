@@ -46,6 +46,13 @@ function signOutRequest() {
   };
 }
 
+function getPermissionsSuccess(roles, permissions) {
+  return {
+    type: types.GET_PERMISSIONS_SUCCESS,
+    payload: { roles, permissions },
+  };
+}
+
 export default {
   signUpRequest,
   signUpSuccess,
@@ -54,4 +61,5 @@ export default {
   signInSuccess,
   signInFailure,
   signOutRequest,
+  getPermissionsSuccess,
 };
