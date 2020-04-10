@@ -11,4 +11,19 @@ export function* getMembers() {
   yield put(actions.getMembersSuccess(response.data));
 }
 
-export default all([takeLatest(types.GET_MEMBERS_REQUEST, getMembers)]);
+export function* updateMember({ payload }) {
+  const { id, roles } = payload;
+
+  try {
+    yield call(api.put, `members/${id}`, {
+      roles: roles.map((role) => role.id),
+    });
+  } catch (err) {
+    yield put(actions.getMembersRequest());
+  }
+}
+
+export default all([
+  takeLatest(types.GET_MEMBERS_REQUEST, getMembers),
+  takeLatest(types.UPDATE_MEMBER_REQUEST, updateMember),
+]);

@@ -31,10 +31,32 @@ function getMembersFailure() {
   };
 }
 
+function updateMemberRequest(id, roles) {
+  return {
+    type: types.UPDATE_MEMBER_REQUEST,
+    payload: { id, roles },
+  };
+}
+
+function updateMemberSuccess() {
+  return {
+    type: types.UPDATE_MEMBER_SUCCESS,
+  };
+}
+
+function updateMemberFailure() {
+  return {
+    type: types.UPDATE_MEMBER_FAILURE,
+  };
+}
+
 export default {
   openMembersModal,
   closeMembersModal,
   getMembersRequest,
   getMembersSuccess,
   getMembersFailure,
+  updateMemberRequest,
+  updateMemberSuccess,
+  updateMemberFailure,
 };

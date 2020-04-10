@@ -21,6 +21,14 @@ export default (state = initialState, { type, payload }) => {
       return produce(state, (draft) => {
         draft.data = payload.members;
       });
+    case types.UPDATE_MEMBER_REQUEST:
+      return produce(state, (draft) => {
+        draft.data = draft.data.map((member) =>
+          member.id === payload.id
+            ? { ...member, roles: payload.roles }
+            : member
+        );
+      });
     default:
       return state;
   }
