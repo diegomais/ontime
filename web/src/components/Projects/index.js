@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import projectActions from '~/store/modules/projects/actions';
+import membersActions from '~/store/modules/members/actions';
 import Modal from '~/components/Modal';
+import Members from '~/components/Members';
 import { Button } from '~/components/Button';
 import { Container, Project } from './styles';
 
@@ -11,6 +13,7 @@ export default function Projects() {
   const dispatch = useDispatch();
   const { activeTeam } = useSelector((state) => state.teams);
   const { data, projectModalOpen } = useSelector((state) => state.projects);
+  const { membersModalOpen } = useSelector((state) => state.members);
 
   useEffect(() => {
     if (activeTeam) {
@@ -18,12 +21,16 @@ export default function Projects() {
     }
   }, [activeTeam, dispatch]);
 
-  function handleOpenModal() {
+  function handleOpenProjectModal() {
     dispatch(projectActions.openProjectModal());
   }
 
-  function handleCloseModal() {
+  function handleCloseProjectModal() {
     dispatch(projectActions.closeProjectModal());
+  }
+
+  function handleOpenMembersModal() {
+    dispatch(membersActions.openMembersModal());
   }
 
   function handleSubmitNewProject(e) {
@@ -41,8 +48,8 @@ export default function Projects() {
       <header>
         <h1>{activeTeam.name}</h1>
         <div>
-          <Button onClick={handleOpenModal}>+ New</Button>
-          <Button onClick={() => {}}>Members</Button>
+          <Button onClick={handleOpenProjectModal}>+ New</Button>
+          <Button onClick={handleOpenMembersModal}>Members</Button>
         </div>
       </header>
 
@@ -65,12 +72,14 @@ export default function Projects() {
             <Button type="submit" size="big">
               Save
             </Button>
-            <Button onClick={handleCloseModal} size="small" color="gray">
+            <Button onClick={handleCloseProjectModal} size="small" color="gray">
               Cancel
             </Button>
           </form>
         </Modal>
       )}
+
+      {membersModalOpen && <Members />}
     </Container>
   );
 }

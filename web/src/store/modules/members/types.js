@@ -1,0 +1,4 @@
+export default {
+  OPEN_MEMBERS_MODAL: '@members/OPEN_MEMBERS_MODAL',
+  CLOSE_MEMBERS_MODAL: '@members/CLOSE_MEMBERS_MODAL',
+};
