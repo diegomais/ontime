@@ -23,7 +23,19 @@ export function* updateMember({ payload }) {
   }
 }
 
+export function* inviteMember({ payload }) {
+  const { email } = payload;
+
+  try {
+    yield call(api.post, 'invites', { invites: [email] });
+    // TODO: Display success message
+  } catch (err) {
+    // TODO: Display error message
+  }
+}
+
 export default all([
   takeLatest(types.GET_MEMBERS_REQUEST, getMembers),
   takeLatest(types.UPDATE_MEMBER_REQUEST, updateMember),
+  takeLatest(types.INVITE_MEMBER_REQUEST, inviteMember),
 ]);

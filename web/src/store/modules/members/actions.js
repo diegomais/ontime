@@ -50,6 +50,13 @@ function updateMemberFailure() {
   };
 }
 
+function inviteMemberRequest(email) {
+  return {
+    type: types.INVITE_MEMBER_REQUEST,
+    payload: { email },
+  };
+}
+
 export default {
   openMembersModal,
   closeMembersModal,
@@ -59,4 +66,5 @@ export default {
   updateMemberRequest,
   updateMemberSuccess,
   updateMemberFailure,
+  inviteMemberRequest,
 };

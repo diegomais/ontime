@@ -6,10 +6,11 @@ import api from '~/services/api';
 import membersActions from '~/store/modules/members/actions';
 import Modal from '~/components/Modal';
 import { Button } from '~/components/Button';
-import { MembersList } from './styles';
+import { Invite, MembersList } from './styles';
 
 export default function Members() {
   const [roles, setRoles] = useState([]);
+  const [inviteEmail, setInviteEmail] = useState([]);
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.members);
 
@@ -19,7 +20,7 @@ export default function Members() {
     }
 
     getMembers();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     async function getRoles() {
@@ -39,9 +40,27 @@ export default function Members() {
     dispatch(membersActions.updateMemberRequest(id, values));
   }
 
+  function handleInvite(e) {
+    e.preventDefault();
+
+    dispatch(membersActions.inviteMemberRequest(inviteEmail));
+
+    setInviteEmail('');
+  }
+
   return (
     <Modal size="big">
       <h1>Members</h1>
+
+      <Invite onSubmit={handleInvite}>
+        <input
+          name="invite"
+          placeholder="Enter email to invite to team"
+          value={inviteEmail}
+          onChange={(e) => setInviteEmail(e.target.value)}
+        />
+        <Button type="submit">Send</Button>
+      </Invite>
 
       <form>
         <MembersList>
