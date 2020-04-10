@@ -1,5 +1,5 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import membersActions from '~/store/modules/members/actions';
 import Modal from '~/components/Modal';
@@ -8,6 +8,15 @@ import { MembersList } from './styles';
 
 export default function Members() {
   const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.members);
+
+  useEffect(() => {
+    function getMembers() {
+      dispatch(membersActions.getMembersRequest());
+    }
+
+    getMembers();
+  }, [dispatch]);
 
   function handleCloseModal() {
     dispatch(membersActions.closeMembersModal());
@@ -19,9 +28,11 @@ export default function Members() {
 
       <form>
         <MembersList>
-          <li>Diego Mais</li>
-          <li>Laura Option</li>
-          <li>Andreia More</li>
+          {data.map((member) => (
+            <li key={member.id}>
+              <strong>{member.user.name}</strong>
+            </li>
+          ))}
         </MembersList>
 
         <Button onClick={handleCloseModal} filled={false} color="gray">
