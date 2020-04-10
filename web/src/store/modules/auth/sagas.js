@@ -6,6 +6,24 @@ import history from '~/services/history';
 import types from './types';
 import actions from './actions';
 
+export function* signUp({ payload }) {
+  try {
+    const { name, email, password } = payload;
+
+    const response = yield call(api.post, 'users', { name, email, password });
+
+    const { token } = response.data;
+
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+
+    yield put(actions.signInSuccess(token));
+
+    history.push('/dashboard');
+  } catch (error) {
+    console.tron.log(error);
+  }
+}
+
 export function* signIn({ payload }) {
   try {
     const { email, password } = payload;
@@ -39,6 +57,7 @@ export function setToken({ payload }) {
 }
 
 export default all([
+  takeLatest(types.SIGN_UP_REQUEST, signUp),
   takeLatest(types.SIGN_IN_REQUEST, signIn),
   takeLatest(types.SIGN_OUT_REQUEST, signOut),
   takeLatest(types.PERSIST_REHYDRATE, setToken),

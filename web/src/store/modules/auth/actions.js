@@ -1,5 +1,25 @@
 import types from './types';
 
+function signUpRequest(name, email, password) {
+  return {
+    type: types.SIGN_UP_REQUEST,
+    payload: { name, email, password },
+  };
+}
+
+function signUpSuccess(token) {
+  return {
+    type: types.SIGN_UP_SUCCESS,
+    payload: { token },
+  };
+}
+
+function signUpFailure() {
+  return {
+    type: types.SIGN_UP_FAILURE,
+  };
+}
+
 function signInRequest(email, password) {
   return {
     type: types.SIGN_IN_REQUEST,
@@ -14,7 +34,7 @@ function signInSuccess(token) {
   };
 }
 
-function signFailure() {
+function signInFailure() {
   return {
     type: types.SIGN_IN_FAILURE,
   };
@@ -27,8 +47,11 @@ function signOutRequest() {
 }
 
 export default {
+  signUpRequest,
+  signUpSuccess,
+  signUpFailure,
   signInRequest,
   signInSuccess,
-  signFailure,
+  signInFailure,
   signOutRequest,
 };

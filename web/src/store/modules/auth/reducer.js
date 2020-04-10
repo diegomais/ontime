@@ -11,6 +11,7 @@ const initialState = {
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case types.SIGN_IN_SUCCESS:
+    case types.SIGN_UP_SUCCESS:
       return produce(state, (draft) => {
         draft.token = payload.token;
         draft.signed = true;
