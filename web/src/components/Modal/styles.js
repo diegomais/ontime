@@ -18,7 +18,7 @@ export const Content = styled.div`
   border-radius: 5px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 40px;
-  width: ${(props) => (props.size === 'big' ? 600 : 400)};
+  width: ${(props) => (props.size === 'big' ? 600 : 400)}px;
 
   h1 {
     font-size: 26px;
