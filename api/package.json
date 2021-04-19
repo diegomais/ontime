@@ -26,7 +26,7 @@
     "@adonisjs/lucid": "^6.2.1",
     "@adonisjs/lucid-slugify": "^1.0.3",
     "@adonisjs/mail": "^3.0.10",
-    "@adonisjs/redis": "^2.0.7",
+    "@adonisjs/redis": "2.1.0",
     "@adonisjs/validator": "^5.0.6",
     "adonis-acl": "^1.1.1",
     "adonis-kue": "^5.0.1",

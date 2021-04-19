@@ -164,15 +164,15 @@
     haye "^2.0.1"
     lodash "^4.17.5"
 
-"@adonisjs/redis@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@adonisjs/redis/-/redis-2.0.7.tgz#d7103eb09d2f17689aa0b55b9dd5c8a479bb5cad"
-  integrity sha512-2wnZKZU/pB2HiwQP2HW/68t5XdB7aRvyFLMVDKPdPPmcbZcVXZH19RWkRs91eTnYzsC14PzUf471FsUkT93lBg==
+"@adonisjs/redis@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/redis/-/redis-2.1.0.tgz#35b5efe2961a137ef245d2e82f6d72bbacdade14"
+  integrity sha512-R5TlMhhl2YVP3nb0tii7cqmG8OqnBeqQcYvR7W33g9QhCAoz7EM+FR3jHLJSFPNXk7QDwtm4Fqhi0tfD4MFYVQ==
   dependencies:
     "@adonisjs/generic-exceptions" "^2.0.1"
-    debug "^3.1.0"
+    debug "^4.3.1"
     ioredis "^3.2.2"
-    lodash "^4.17.10"
+    lodash "^4.17.21"
 
 "@adonisjs/utils@^1.4.4":
   version "1.4.4"
@@ -1346,6 +1346,13 @@ debug@^3.0.1, debug@^3.1.0:
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
   dependencies:
     ms "^2.1.1"
+
+debug@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
+  integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
+  dependencies:
+    ms "2.1.2"
 
 debug@~3.1.0:
   version "3.1.0"
@@ -3104,7 +3111,7 @@ lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.1
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
-lodash@^4.17.4:
+lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -3323,7 +3330,7 @@ ms@2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
-ms@^2.1.1:
+ms@2.1.2, ms@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
