@@ -23,10 +23,10 @@
     prompt-list "^3.2.0"
     prompt-password "^1.2.0"
 
-"@adonisjs/auth@^3.0.7":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-3.1.0.tgz#039c2bd60d959d3bb5e6e49ec29825ad54b165d8"
-  integrity sha512-NLy0Jjmb7/Vmh5GvL7ma8qrSoC8oW32lcz6T5FRDMnXFs59pfBS0Mej0Try6iY/aGGFMKiLVVOoGzhgWgeX8eA==
+"@adonisjs/auth@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-3.2.0.tgz#51c2c864c7cdb8c06ed483e73509d2ca15715261"
+  integrity sha512-Bawnpg8BaPrVmG1QhX3egw2SfYOtrOcMpn2q/ck58J9A4WUJAk1LZWXIeu2AF0jrASZuXlmdy4HIMFpl8NKVZg==
   dependencies:
     "@adonisjs/generic-exceptions" "^2.0.1"
     basic-auth "^2.0.1"
@@ -35,7 +35,7 @@
     lodash "^4.17.11"
     ms "^2.1.1"
     resetable "^1.0.3"
-    uuid "^3.3.2"
+    uuid "^8.3.2"
 
 "@adonisjs/bodyparser@^2.2.5":
   version "2.2.5"
@@ -5483,6 +5483,11 @@ uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
