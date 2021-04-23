@@ -181,10 +181,10 @@
   dependencies:
     require-all "^3.0.0"
 
-"@adonisjs/validator@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@adonisjs/validator/-/validator-5.0.6.tgz#5354cebcf578b964ca58de24436ae00718bd5fd4"
-  integrity sha512-Koql5nOSfRFhNwkvk38tAHLfpxwuOinZIuLhPP0zAfHCltrXCh02MfydfgA13vDc5LITJgWycXFv+FNb7ljCqg==
+"@adonisjs/validator@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/validator/-/validator-5.1.0.tgz#70f92f6fb1452685c9837658a2916f88dc848a0a"
+  integrity sha512-qz4YNfg89MzqfgluMuM1Wq7GSTOd3h2x0rn+cXT8rnva3jkgiWDaqstMSCNAelB3A2KiujbsxZk/HR0k5o9Zkg==
   dependencies:
     "@adonisjs/generic-exceptions" "^2.0.1"
     indicative "^5.0.8"
