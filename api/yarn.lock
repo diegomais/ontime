@@ -164,15 +164,15 @@
     haye "^2.0.1"
     lodash "^4.17.5"
 
-"@adonisjs/redis@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@adonisjs/redis/-/redis-2.0.7.tgz#d7103eb09d2f17689aa0b55b9dd5c8a479bb5cad"
-  integrity sha512-2wnZKZU/pB2HiwQP2HW/68t5XdB7aRvyFLMVDKPdPPmcbZcVXZH19RWkRs91eTnYzsC14PzUf471FsUkT93lBg==
+"@adonisjs/redis@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/redis/-/redis-2.1.0.tgz#35b5efe2961a137ef245d2e82f6d72bbacdade14"
+  integrity sha512-R5TlMhhl2YVP3nb0tii7cqmG8OqnBeqQcYvR7W33g9QhCAoz7EM+FR3jHLJSFPNXk7QDwtm4Fqhi0tfD4MFYVQ==
   dependencies:
     "@adonisjs/generic-exceptions" "^2.0.1"
-    debug "^3.1.0"
+    debug "^4.3.1"
     ioredis "^3.2.2"
-    lodash "^4.17.10"
+    lodash "^4.17.21"
 
 "@adonisjs/utils@^1.4.4":
   version "1.4.4"
