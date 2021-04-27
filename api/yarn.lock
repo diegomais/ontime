@@ -53,7 +53,7 @@
     media-typer "^1.1.0"
     multiparty "^4.2.1"
 
-"@adonisjs/cors@^1.0.7":
+"@adonisjs/cors@1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@adonisjs/cors/-/cors-1.0.7.tgz#9b7565ad0b80215c620e8864b4af8651220a527c"
   integrity sha512-jBO+bI/zdydAXURL02gQxXB57L5+eV2MUYp7zmDrVa12M6mQPMRz5TC2F7a0Kknx9JUr5dsl4+eN0XNfe/8sWQ==
@@ -65,7 +65,7 @@
   dependencies:
     "@poppinss/utils" "^3.0.5"
 
-"@adonisjs/framework@^5.0.9":
+"@adonisjs/framework@5.0.13":
   version "5.0.13"
   resolved "https://registry.yarnpkg.com/@adonisjs/framework/-/framework-5.0.13.tgz#7a14f57d379065d0ee8c49e11a682803159aab4e"
   integrity sha512-qZx+9WF1bnK3sM4UJnKw6Zu52WIPCB1R4LjBBwSFrnG5TYbIAQATyB08YXc7ETMkQ4dIQmPH+tpq4J7+k2Joog==
@@ -103,7 +103,7 @@
     node-exceptions "^3.0.0"
     upcast "^2.1.1"
 
-"@adonisjs/ignitor@^2.0.8":
+"@adonisjs/ignitor@2.0.8":
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/@adonisjs/ignitor/-/ignitor-2.0.8.tgz#d4db4f09d8f0ee0e7f9b5030de14135a25a8bf91"
   integrity sha512-drpuwxIjvBpBBn4Ndt2Sghf0aN3ml1zz3Bxu3g42k29ZEMDKgw9KkmabsEd+MVUqPLzch4cJRFKIReh9TWnY+Q==
@@ -113,7 +113,7 @@
     youch "^2.0.10"
     youch-terminal "^1.0.0"
 
-"@adonisjs/lucid-slugify@^1.0.3":
+"@adonisjs/lucid-slugify@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@adonisjs/lucid-slugify/-/lucid-slugify-1.0.3.tgz#952f9253efc73522972959102c8096c3592d581d"
   integrity sha512-89iSrGTGIw0hjY/o5+GYWNdktmFjZM3cwyFt6Xx5Avv2gMiRNRTBE/Qm7mexjXlP89M8rH+l9s7GO+PlUmQO2g==
@@ -318,7 +318,7 @@ acorn@^7.1.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.1.tgz#e35668de0b402f359de515c5482a1ab9f89a69bf"
   integrity sha512-add7dgA5ppRPxCFJoAGfMDi7PIBXq1RtGo7BhbLaxwrXPOmw8gq48Y9ozT01hUKy9byMjlR20EJhu5zlkErEkg==
 
-adonis-acl@^1.1.1:
+adonis-acl@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/adonis-acl/-/adonis-acl-1.1.1.tgz#34d9975e8ad43da5e2ff889a14d2aca069b8fe21"
   integrity sha512-NHCx/CfnjXfA0NKP8l33mAz0WjWXqnZ+la2493kXVEt4GbqnBWdJkfjl0vAqCSeLRr+wDRT3JMIy0FdwodItuA==
@@ -327,7 +327,7 @@ adonis-acl@^1.1.1:
     lodash "^4.17.4"
     node-exceptions "^2.0.2"
 
-adonis-kue@^5.0.1:
+adonis-kue@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/adonis-kue/-/adonis-kue-5.0.1.tgz#0ec8b1ac55198c5ae545e0c34df84d473443c4bf"
   integrity sha512-YxuSH5po8UsCYFXW6BnJ4xy8P/1sEcCqwn0BNuTtOJB25mSiEXb/lEraU77ZEbo9WLM5Q+/MYy2QA7UhhzpeUw==
@@ -1703,7 +1703,7 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-airbnb-base@^14.1.0:
+eslint-config-airbnb-base@14.1.0:
   version "14.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-14.1.0.tgz#2ba4592dd6843258221d9bff2b6831bd77c874e4"
   integrity sha512-+XCcfGyCnbzOnktDVhwsCAx+9DmrzEmuwxyHUJpw+kqBVT744OUBrB09khgFKlK1lshVww6qXGsYPZpavoNjJw==
@@ -1712,7 +1712,7 @@ eslint-config-airbnb-base@^14.1.0:
     object.assign "^4.1.0"
     object.entries "^1.1.1"
 
-eslint-config-prettier@^6.10.1:
+eslint-config-prettier@6.10.1:
   version "6.10.1"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.10.1.tgz#129ef9ec575d5ddc0e269667bf09defcd898642a"
   integrity sha512-svTy6zh1ecQojvpbJSgH3aei/Rt7C6i090l5f2WQ4aB05lYHeZIR1qL4wZyyILTbtmnbHP5Yn8MrsOJMGa8RkQ==
@@ -1735,7 +1735,7 @@ eslint-module-utils@^2.4.1:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-import@^2.20.1:
+eslint-plugin-import@2.20.1:
   version "2.20.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.20.1.tgz#802423196dcb11d9ce8435a5fc02a6d3b46939b3"
   integrity sha512-qQHgFOTjguR+LnYRoToeZWT62XM55MBVXObHM6SKFd1VzDcX/vqT1kAz8ssqigh5eMj8qXcRoXXGZpPP6RfdCw==
@@ -1753,7 +1753,7 @@ eslint-plugin-import@^2.20.1:
     read-pkg-up "^2.0.0"
     resolve "^1.12.0"
 
-eslint-plugin-prettier@^3.1.2:
+eslint-plugin-prettier@3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.2.tgz#432e5a667666ab84ce72f945c72f77d996a5c9ba"
   integrity sha512-GlolCC9y3XZfv3RQfwGew7NnuFDKsfI4lbvRK+PIIo23SFH+LemGs4cKwzAaRa+Mdb+lQO/STaIayno8T5sJJA==
@@ -1780,7 +1780,7 @@ eslint-visitor-keys@^1.1.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
-eslint@^6.8.0:
+eslint@6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.8.0.tgz#62262d6729739f9275723824302fb227c8c93ffb"
   integrity sha512-K+Iayyo2LtyYhDSYwz5D5QdWw0hCacNzyq1Y821Xna2xSJj7cijoLLYmLxTQgcgZ9mC61nryMy9S7GRbYpI5Ig==
@@ -4008,7 +4008,7 @@ pg-types@^2.1.0:
     postgres-date "~1.0.4"
     postgres-interval "^1.1.0"
 
-pg@^7.18.2:
+pg@7.18.2:
   version "7.18.2"
   resolved "https://registry.yarnpkg.com/pg/-/pg-7.18.2.tgz#4e219f05a00aff4db6aab1ba02f28ffa4513b0bb"
   integrity sha512-Mvt0dGYMwvEADNKy5PMQGlzPudKcKKzJds/VbOeZJpb6f/pI3mmoXX0JksPgI3l3JPP/2Apq7F36O63J7mgveA==
@@ -4117,7 +4117,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.0.1:
+prettier@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.1.tgz#3f00ac71263be34684b2b2c8d7e7f63737592dac"
   integrity sha512-piXGBcY1zoFOG0MvHpNE5reAGseLmaCRifQ/fmfF49BcYkInEs/naD/unxGNAeOKFA5+JxVrPyMvMlpzcd20UA==
