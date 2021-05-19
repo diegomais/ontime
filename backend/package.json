@@ -30,7 +30,7 @@
     "@adonisjs/validator": "11.0.0",
     "adonis-acl": "1.1.1",
     "adonis-kue": "5.0.1",
-    "pg": "7.18.2"
+    "pg": "8.6.0"
   },
   "devDependencies": {
     "eslint": "6.8.0",
