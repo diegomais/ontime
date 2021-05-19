@@ -25,7 +25,7 @@
     "@adonisjs/ignitor": "2.0.8",
     "@adonisjs/lucid": "6.3.0",
     "@adonisjs/lucid-slugify": "1.0.3",
-    "@adonisjs/mail": "3.1.0",
+    "@adonisjs/mail": "7.1.1",
     "@adonisjs/redis": "2.1.0",
     "@adonisjs/validator": "11.0.0",
     "adonis-acl": "1.1.1",
